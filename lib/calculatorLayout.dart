@@ -7,6 +7,7 @@ import 'package:yugiohcalculator/player1.dart';
 import 'package:flutter/material.dart';
 import 'package:yugiohcalculator/player2.dart';
 import 'package:yugiohcalculator/selectDeck.dart';
+import 'package:yugiohcalculator/timer.dart';
 
 class CalculatorLayout extends StatelessWidget {
   const CalculatorLayout({super.key});
@@ -16,7 +17,7 @@ class CalculatorLayout extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Stack(
-          children: const [
+          children: [
             Align(
               alignment: Alignment.centerLeft,
               child: Player1(),
@@ -26,6 +27,10 @@ class CalculatorLayout extends StatelessWidget {
               child: Player2(),
             ),
             Center(child: MusicPlayer()),
+            Align(
+              alignment: Alignment.topCenter,
+              child: OtpTimer(),
+            ),
           ],
         ),
       ),
