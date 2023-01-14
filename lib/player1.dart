@@ -7,8 +7,8 @@ import 'package:yugiohcalculator/playerName.dart';
 
 class Player1 extends StatefulWidget {
   final Color color;
-  final int vida;
-  const Player1({super.key, required this.color, required this.vida});
+
+  const Player1({super.key, required this.color});
 
   @override
   State<Player1> createState() => _Player1State();
@@ -26,11 +26,9 @@ class _Player1State extends State<Player1> {
         children: [
           const PlayerName(),
           Center(
-            child: LifePointsPlayer1(
-              vida: widget.vida,
-            ),
+            child: LifePointsPlayer1(),
           ),
-          Advantage(),
+          //Advantage(),
         ],
       ),
     );

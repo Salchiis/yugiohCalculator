@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:yugiohcalculator/lifePointsPlayer1.dart' as life;
 
 class OtpTimer extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class _CountdownTimerDemoState extends State<OtpTimer> {
   // Step 2
   Timer? countdownTimer;
   Duration myDuration = Duration(minutes: 45);
+  bool isActive = false;
   @override
   void initState() {
     super.initState();
@@ -19,19 +21,24 @@ class _CountdownTimerDemoState extends State<OtpTimer> {
   /// Timer related methods ///
   // Step 3
   void startTimer() {
-    countdownTimer =
-        Timer.periodic(Duration(seconds: 1), (_) => setCountDown());
+    if (isActive == false) {
+      countdownTimer =
+          Timer.periodic(Duration(seconds: 1), (_) => setCountDown());
+      setState((() => isActive = true));
+    }
   }
 
   // Step 4
   void stopTimer() {
     setState(() => countdownTimer!.cancel());
+    setState((() => isActive = false));
   }
 
   // Step 5
   void resetTimer() {
     stopTimer();
     setState(() => myDuration = Duration(minutes: 45));
+    stopTimer();
   }
 
   // Step 6

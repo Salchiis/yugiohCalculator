@@ -15,7 +15,6 @@ class CalculatorLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     Color color1 = Colors.purple;
     Color color2 = Colors.amber;
-    int vida = 8000;
 
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -26,23 +25,21 @@ class CalculatorLayout extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Player1(
               color: color1,
-              vida: vida,
             ),
           ),
           Align(
             alignment: Alignment.centerRight,
             child: Player1(
               color: color2,
-              vida: vida,
             ),
           ),
-          Center(
+          /*Center(
             child: Padding(
               padding:
                   EdgeInsets.only(top: MediaQuery.of(context).size.height * .7),
               child: MusicPlayer(),
             ),
-          ),
+          ),*/
           Align(
             alignment: Alignment.topCenter,
             child: OtpTimer(),
