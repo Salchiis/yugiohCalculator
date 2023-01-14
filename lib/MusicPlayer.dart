@@ -13,14 +13,14 @@ class _MusicPlayerState extends State<MusicPlayer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * .05,
-      height: MediaQuery.of(context).size.width * .05,
+      width: MediaQuery.of(context).size.width * .07,
+      height: MediaQuery.of(context).size.width * .07,
       child: FloatingActionButton(
         backgroundColor: Colors.amber.shade900,
         onPressed: () => {},
         child: Icon(
           Icons.play_arrow,
-          size: 15,
+          size: 35,
         ),
       ),
     );

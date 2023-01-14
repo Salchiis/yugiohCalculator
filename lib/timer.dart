@@ -57,21 +57,27 @@ class _CountdownTimerDemoState extends State<OtpTimer> {
     return Center(
       child: Column(
         children: [
-          SizedBox(
-            height: 50,
-          ),
           // Step 8
-          Text(
-            '$minutes:$seconds',
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.black, fontSize: 50),
+          Padding(
+            padding: const EdgeInsets.only(top: 20, bottom: 40),
+            child: Container(
+              color: Colors.white,
+              child: Text(
+                '$minutes:$seconds',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 50),
+              ),
+            ),
           ),
-          SizedBox(height: 20),
+
           // Step 9
           ElevatedButton(
             onPressed: startTimer,
+            style: ElevatedButton.styleFrom(primary: Colors.green),
             child: Text(
-              'Start',
+              'Empezar',
               style: TextStyle(
                 fontSize: 30,
               ),
@@ -84,8 +90,9 @@ class _CountdownTimerDemoState extends State<OtpTimer> {
                 stopTimer();
               }
             },
+            style: ElevatedButton.styleFrom(primary: Colors.red),
             child: Text(
-              'Stop',
+              'Detener',
               style: TextStyle(
                 fontSize: 30,
               ),
@@ -96,8 +103,9 @@ class _CountdownTimerDemoState extends State<OtpTimer> {
               onPressed: () {
                 resetTimer();
               },
+              style: ElevatedButton.styleFrom(primary: Colors.blue),
               child: Text(
-                'Reset',
+                'Reiniciar',
                 style: TextStyle(
                   fontSize: 30,
                 ),

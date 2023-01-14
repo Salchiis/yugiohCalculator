@@ -7,10 +7,8 @@ class LifePointsPlayer2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [Text("7000")],
-      ),
+    return const Center(
+      child: Text("8000"),
     );
   }
 }
